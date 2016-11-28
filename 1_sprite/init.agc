@@ -3,7 +3,7 @@ Function Initialize()
 	SetErrorMode(2)
 
 	// set window properties
-	SetWindowTitle( "1 Sprite" )
+	SetWindowTitle( "1: Sprite" )
 	SetWindowSize( 1024, 768, 0 )
 
 	// set display properties

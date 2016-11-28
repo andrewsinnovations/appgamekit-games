@@ -18,7 +18,7 @@ Function GameLoop()
 	do
 		time = Timer()
 				
-		if time - last_time > 0.01
+		if time - last_time > 0.1
 			g_ufos.insert(CreateUFO())
 			last_time = time
 		endif

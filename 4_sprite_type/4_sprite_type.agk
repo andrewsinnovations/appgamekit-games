@@ -46,12 +46,6 @@ FILE_4=globals.agc;-1
 FILE_5=ufo.agc;-1
 
 [files]
-FILE_NAME_0=0;main.agc;0;2
-FILE_NAME_1=0;init.agc;0;5
-FILE_NAME_2=0;game.agc;459;0
-FILE_NAME_3=0;resources.agc;0;3
-FILE_NAME_4=0;globals.agc;99;1
-FILE_NAME_5=1;ufo.agc;693;4
 
 [project]
 description=
