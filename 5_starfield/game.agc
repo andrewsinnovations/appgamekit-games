@@ -20,8 +20,6 @@ Function GameLoop()
 	screen_height = GetVirtualHeight()
 
 	do
-		time = Timer()
-				
 		Print( ScreenFPS() )
 		
 		
