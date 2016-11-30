@@ -46,7 +46,7 @@ FILE_4=globals.agc;-1
 FILE_5=ufo.agc;-1
 
 [files]
-FILE_NAME_0=0;init.agc;120;1
+FILE_NAME_0=0;ufo.agc;0;2
 
 [project]
 description=

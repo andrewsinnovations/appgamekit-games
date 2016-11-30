@@ -62,6 +62,7 @@ Function GameLoop()
 		
 		DrawStarfield(starfield)
 		Print( ScreenFPS() )
+		Print("Use W,A,S,D or arrow keys to move")
 		Sync()
 	loop
 	
