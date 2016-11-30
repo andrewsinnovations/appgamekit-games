@@ -1,13 +1,15 @@
+#include "object.agc"
+
 // images
 global g_ufo_img = 0
 global g_galaxy_img = 0
 global g_enemy_img = 0
+global g_laser_img = 0
 
 // ufo
 global g_ufo = 0
 global g_enemy = 0
-
-// enemy
+global g_bullets as Object[]
 
 // movement
 global g_move_x = 0

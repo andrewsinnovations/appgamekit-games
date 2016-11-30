@@ -39,7 +39,22 @@ Function MoveUFO()
 	SetSpritePosition(g_ufo, new_x, new_y)
 EndFunction
 
+Function CreateBullet()
+	
+	bullet as Object
+
+	bullet.SpriteID = CreateSprite(g_laser_img)
+	bullet.X = GetSpriteX(g_ufo) + 85
+	bullet.Y = GetSpriteY(g_ufo) + 32 - GetSpriteHeight(bullet.SpriteID)
+	bullet.MoveX = 10
+	
+	SetSpritePosition(bullet.SpriteID, bullet.X, bullet.Y)
+	
+	g_bullets.insert(bullet)
+EndFunction
+
 Function GameLoop()
+	collisions as Object[]
 	time as float
 	last_time as float
 	i as integer
@@ -58,8 +73,25 @@ Function GameLoop()
 	screen_height = GetVirtualHeight()
 
 	do
+		time = Timer()
+		
+		if Timer() - last_time > 0.25
+			CreateBullet()
+			last_time = time
+		endif
+		
 		HandleInput()
 		MoveUFO()
+		
+		for i = 0 to g_bullets.length
+			MoveObject(g_bullets[i])
+		next i
+		
+		collisions = CheckCOllisionSpriteObjectList(g_enemy, g_bullets)
+		
+		if collisions.length > -1
+			SetSpritePosition(g_enemy, Random(400, GetVirtualWidth() - GetSpriteWidth(g_enemy)), Random(0, GetVirtualHeight() - GetSpriteHeight(g_enemy)))
+		endif
 		
 		DrawStarfield(starfield)
 		Print( ScreenFPS() )

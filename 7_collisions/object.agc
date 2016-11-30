@@ -26,6 +26,13 @@ Function CreateObject(sprite as integer, x as integer, y as integer, size_x as i
 	SetSpritePosition(spr, x, y)
 EndFunction obj
 
+Function MoveObject(object ref as Object)
+	object.X = object.X + object.MoveX
+	object.Y = object.Y + object.MoveY
+	
+	SetSpritePosition(object.SpriteID, object.X, object.Y)
+EndFunction
+
 Function CheckCollision(sprite as integer, target as integer)
 	collision as integer
 	
@@ -38,7 +45,7 @@ Function CheckCollisionSpriteList(sprite as integer, target as integer[])
 	collided_sprites as integer[]
 	i as integer
 	
-	for i = 1 to target.length
+	for i = 0 to target.length
 		if CheckCollision(sprite, target[i]) > 0
 			collided_sprites.insert(target[i])
 		endif
@@ -59,7 +66,7 @@ Function CheckCollisionObjectList(obj as Object, target as Object[])
 	
 	i as integer
 	
-	for i = 1 to target.length
+	for i = 0 to target.length
 		if CheckCollisionObject(obj, target[i]) > 0
 			collided_objects.insert(target[i])
 		endif
@@ -74,6 +81,17 @@ Function CheckCollisionSpriteObject(sprite as integer, target ref as Object)
 		collision = GetSpriteCollision(sprite, target.SpriteID)
 	endif
 EndFunction collision
+
+Function CheckCollisionSpriteObjectList(sprite as integer, target ref as Object[])
+	collided_objects as object[]
+	i as integer
+	
+	for i = 0 to target.length
+		if CheckCollisionSpriteObject(sprite, target[i]) > 0
+			collided_objects.insert(target[i])
+		endif
+	next i
+EndFunction collided_objects
 
 /*
 Function MoveUFO(ufo ref as UFOType, x_min as integer, x_max as integer, y_min as integer, y_max as integer)
