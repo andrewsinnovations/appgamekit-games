@@ -21,6 +21,10 @@ Function GameLoop()
 			Print("Circle")
 		endif
 		
+		if GetSpriteCollision(g_cursor_spr, g_target_ufo_spr) 
+			Print("UFO")
+		endif
+		
 		Sync()
 	loop
 	
