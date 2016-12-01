@@ -7,7 +7,19 @@ Function GameLoop()
 		Print( ScreenFPS() )
 		Print("Move the mouse.")
 		
-		SetSpritePosition(g_cursor_spr, GetPointerX(), GetPointerY())
+		SetSpritePositionByOffset(g_cursor_spr, GetPointerX(), GetPointerY())
+		
+		if GetSpriteCollision(g_cursor_spr, g_target_box_spr)
+			Print("Box")
+		endif
+
+		if GetSpriteCollision(g_cursor_spr, g_target_triangle_img)
+			Print("Triangle")
+		endif
+		
+		if GetSpriteCollision(g_cursor_spr, g_target_circle_spr) 
+			Print("Circle")
+		endif
 		
 		Sync()
 	loop
