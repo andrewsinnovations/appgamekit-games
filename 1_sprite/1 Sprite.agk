@@ -45,6 +45,11 @@ FILE_3=resources.agc;-1
 FILE_4=globals.agc;-1
 
 [files]
+FILE_NAME_0=0;main.agc;0;7
+FILE_NAME_1=0;init.agc;0;8
+FILE_NAME_2=0;game.agc;0;10
+FILE_NAME_3=0;resources.agc;0;6
+FILE_NAME_4=0;globals.agc;0;9
 
 [project]
 description=
