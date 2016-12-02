@@ -1,6 +1,5 @@
 Function LoadResources()
 	
-	g_cursor_img = LoadImage("cursor.png")
 	g_target_box_img = LoadImage("box.png")
 	g_target_triangle_img = LoadImage("triangle.png")
 	g_target_circle_img = LoadImage("circle.png")
@@ -10,7 +9,6 @@ EndFunction
 
 Function CreateObjects()
 	
-	g_cursor_spr = CreateSprite(g_cursor_img)
 	g_target_box_spr = CreateSprite(g_target_box_img)
 	g_target_triangle_spr = CreateSprite(g_target_triangle_img)
 	g_target_circle_spr = CreateSprite(g_target_circle_img)
@@ -21,8 +19,6 @@ Function CreateObjects()
 	SetSpritePosition(g_target_circle_img, 700, 200)
 	SetSpritePosition(g_target_ufo_spr, 400, 500)
 	
-	
-	SetSpriteOffset(g_cursor_spr, GetSpriteWidth(g_cursor_spr) / 2, GetSpriteHeight(g_cursor_spr) / 2)
 	
 	SetSpriteShapeCircle(g_target_circle_img, 0, 0, 64)
 	
